@@ -28,4 +28,5 @@ def main(page: ft.Page):
     )
   )
   
-ft.app(target=main)
+# ft.app(target=main) # run the app as an application natively
+ft.app(target=main, view=ft.AppView.WEB_BROWSER) # run the app as a Web
