@@ -41,6 +41,29 @@ def main(page: ft.Page):
       page.controls.pop(0)
     page.update()
     time.sleep(0.3)
+    
+    
+  def button_clicked(e):
+    page.add(ft.Text("Clicked!"))
+    
+  page.add(ft.ElevatedButton(text="Click me", on_click=button_clicked))
   
-
+  first_name = ft.TextField()
+  last_name = ft.TextField()
+  first_name.disabled = True
+  last_name.disabled = True
+  page.add(first_name, last_name)
+  
+  first_name_c = ft.TextField()
+  last_name_c = ft.TextField()
+  c = ft.Column(
+    controls=[
+      first_name_c,
+      last_name_c
+    ]
+  )
+  
+  c.disabled = True
+  page.add(c)
+  
 ft.app(target=main)
